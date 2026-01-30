@@ -1,0 +1,801 @@
+/* ===========================================
+   PREMIUM CONTACT SECTION STYLING
+   Matching the Gold & Dark Grey Gradient Theme
+=========================================== */
+
+.contact-section {
+  padding: 120px 20px;
+  background: linear-gradient(135deg, var(--white) 0%, var(--light-grey) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-gold-dark);
+  z-index: 1;
+}
+
+/* Background Decorations */
+.contact-bg-decoration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bg-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--gradient-gold-light);
+  opacity: 0.1;
+  animation: float 20s ease-in-out infinite;
+}
+
+.bg-dot.dot-1 {
+  width: 80px;
+  height: 80px;
+  top: 15%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.bg-dot.dot-2 {
+  width: 60px;
+  height: 60px;
+  top: 70%;
+  right: 10%;
+  animation-delay: 5s;
+}
+
+.bg-dot.dot-3 {
+  width: 40px;
+  height: 40px;
+  bottom: 20%;
+  left: 15%;
+  animation-delay: 10s;
+}
+
+.bg-line {
+  position: absolute;
+  background: var(--gradient-gold-light);
+  opacity: 0.05;
+}
+
+.bg-line.line-1 {
+  width: 300px;
+  height: 2px;
+  top: 30%;
+  right: -150px;
+  transform: rotate(45deg);
+}
+
+.bg-line.line-2 {
+  width: 400px;
+  height: 2px;
+  bottom: 20%;
+  left: -200px;
+  transform: rotate(-30deg);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+/* Contact Content Layout */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Contact Info Cards */
+.contact-info-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.contact-card {
+  background: var(--white);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  transition: var(--transition-smooth);
+  overflow: hidden;
+  position: relative;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-gold-dark);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.contact-card:hover::before {
+  transform: scaleX(1);
+}
+
+.contact-card-inner {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-gold-subtle);
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-gold);
+}
+
+.card-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--white);
+}
+
+.card-content h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.card-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dark-grey);
+  margin-bottom: 5px;
+  background: var(--gradient-gold-dark);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-details {
+  font-size: 0.875rem;
+  color: var(--medium-grey);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.card-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--gold-dark);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  transition: var(--transition-standard);
+  margin-top: auto;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.card-action:hover {
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--gold-primary);
+  transform: translateY(-2px);
+}
+
+.card-action svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* WhatsApp Specific Card */
+.whatsapp-card .card-icon {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+}
+
+.whatsapp-card .card-action.whatsapp-action {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  border: none;
+}
+
+.whatsapp-card .card-action.whatsapp-action:hover {
+  background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+  color: white;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+  background: var(--white);
+  border-radius: var(--border-radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-medium);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.form-header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.form-header h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+
+.form-header p {
+  color: var(--medium-grey);
+  line-height: 1.6;
+}
+
+/* Premium Form Styling */
+.premium-contact-form {
+  width: 100%;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--dark-grey);
+  margin-bottom: 8px;
+}
+
+.required {
+  color: #e74c3c;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.input-with-icon,
+.textarea-with-icon {
+  position: relative;
+}
+
+.input-with-icon svg,
+.textarea-with-icon svg {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  fill: var(--gold-primary);
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.textarea-with-icon svg {
+  top: 20px;
+  transform: none;
+}
+
+.input-with-icon input,
+.textarea-with-icon textarea,
+.input-with-icon select {
+  width: 100%;
+  padding: 14px 16px 14px 48px;
+  border: 2px solid rgba(212, 175, 55, 0.1);
+  border-radius: var(--border-radius-md);
+  background: var(--white);
+  font-size: 0.9375rem;
+  color: var(--dark-grey);
+  transition: var(--transition-standard);
+  outline: none;
+}
+
+.input-with-icon input:focus,
+.textarea-with-icon textarea:focus,
+.input-with-icon select:focus {
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.input-with-icon select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23D4AF37'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 20px;
+  padding-right: 40px;
+}
+
+.textarea-with-icon textarea {
+  min-height: 120px;
+  resize: vertical;
+  padding: 16px 16px 16px 48px;
+}
+
+.input-focus-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--gradient-gold-dark);
+  transition: width 0.3s ease;
+}
+
+.input-with-icon input:focus ~ .input-focus-line,
+.textarea-with-icon textarea:focus ~ .input-focus-line,
+.input-with-icon select:focus ~ .input-focus-line {
+  width: 100%;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 40px;
+  background: var(--gradient-gold-dark);
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius-lg);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-gold);
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(212, 175, 55, 0.3);
+}
+
+.submit-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.whatsapp-alternative {
+  text-align: right;
+}
+
+.whatsapp-alternative p {
+  font-size: 0.875rem;
+  color: var(--medium-grey);
+  margin-bottom: 8px;
+}
+
+.whatsapp-direct-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #25D366;
+  color: white;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: var(--transition-standard);
+  border: 2px solid #25D366;
+}
+
+.whatsapp-direct-btn:hover {
+  background: white;
+  color: #25D366;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-subtle);
+}
+
+.whatsapp-direct-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Map Section */
+.map-section {
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.map-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.map-header h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+
+.map-header p {
+  color: var(--medium-grey);
+  font-size: 1.0625rem;
+}
+
+.map-container {
+  background: var(--white);
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.map-wrapper {
+  position: relative;
+  height: 500px;
+}
+
+.map-embed {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.map-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.map-overlay {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  max-width: 350px;
+}
+
+.map-info-card {
+  background: var(--white);
+  padding: 25px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-medium);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.map-info-card h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--gradient-gold-dark);
+}
+
+.map-info-card p {
+  font-size: 0.875rem;
+  color: var(--medium-grey);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.map-info-card p strong {
+  color: var(--dark-grey);
+  font-weight: 600;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+=========================================== */
+
+/* Tablet (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .contact-info-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .map-wrapper {
+    height: 400px;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile (up to 767px) */
+@media screen and (max-width: 767px) {
+  .contact-section {
+    padding: 80px 15px;
+  }
+  
+  .contact-info-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .contact-card-inner {
+    padding: 25px;
+  }
+  
+  .contact-form-section {
+    padding: 25px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .whatsapp-alternative {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .map-wrapper {
+    height: 350px;
+  }
+  
+  .map-overlay {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    max-width: 100%;
+    padding: 20px;
+  }
+  
+  .map-info-card {
+    padding: 20px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+  
+  .card-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Small Mobile (up to 480px) */
+@media screen and (max-width: 480px) {
+  .contact-section {
+    padding: 60px 12px;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .contact-card-inner {
+    padding: 20px;
+  }
+  
+  .form-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .input-with-icon input,
+  .textarea-with-icon textarea,
+  .input-with-icon select {
+    padding: 12px 12px 12px 40px;
+  }
+  
+  .input-with-icon svg,
+  .textarea-with-icon svg {
+    left: 12px;
+  }
+  
+  .map-wrapper {
+    height: 300px;
+  }
+  
+  .card-value {
+    font-size: 1.125rem;
+  }
+}
+
+/* Large Desktop (1200px and above) */
+@media screen and (min-width: 1200px) {
+  .contact-content {
+    gap: 80px;
+  }
+  
+  .contact-info-cards {
+    gap: 30px;
+  }
+  
+  .contact-card-inner {
+    padding: 35px;
+  }
+  
+  .map-wrapper {
+    height: 600px;
+  }
+}
+
+/* ===========================================
+   CRITICAL RESPONSIVE FIXES
+   Ensures cards and grids stay perfectly aligned
+=========================================== */
+
+/* 1. Fix for Tablet/Medium Screens (Squeezed content) */
+@media screen and (max-width: 1100px) and (min-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr; /* Stack form and cards earlier to avoid squeezing */
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    .contact-info-cards {
+        grid-template-columns: repeat(2, 1fr); /* Keep side-by-side but give them room */
+        gap: 20px;
+    }
+}
+
+/* 2. Fix for "Call Us" Cards & Icon Alignment */
+@media screen and (max-width: 767px) {
+    .contact-card-inner {
+        flex-direction: row; /* Keep icon and text side-by-side on mobile */
+        align-items: center;
+        text-align: left;
+        gap: 15px;
+    }
+
+    .card-icon {
+        margin-bottom: 0; /* Remove bottom margin since they are now side-by-side */
+        flex-shrink: 0;
+        width: 45px;
+        height: 45px;
+    }
+
+    .card-value {
+        font-size: 1rem;
+        word-break: break-word; /* Prevent long phone numbers from breaking layout */
+    }
+
+    .card-action {
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
+
+/* 3. Extreme Small Mobile (Phones under 400px) */
+@media screen and (max-width: 400px) {
+    .contact-card-inner {
+        flex-direction: column; /* Finally stack vertically on very small screens */
+        text-align: center;
+    }
+
+    .card-icon {
+        margin: 0 auto 10px auto;
+    }
+
+    .form-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .submit-btn {
+        padding: 14px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* 4. Map Overlay Fix (Prevents it from covering the map on mobile) */
+@media screen and (max-width: 767px) {
+    .map-overlay {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        transform: none;
+        padding: 15px;
+        width: 100%;
+    }
+
+    .map-wrapper {
+        height: auto;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .map-embed {
+        height: 300px;
+    }
+}
+.location-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 12px 24px;
+    background: var(--gradient-gold-dark);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: var(--border-radius-md);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-gold);
+}
+
+.location-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    color: var(--white);
+}
+
+.location-btn i {
+    font-size: 1.1rem;
+}

@@ -1,0 +1,1120 @@
+/* ===========================================
+   WHY CHOOSE US SECTION STYLING
+   Premium Gold & Dark Grey Gradient Theme
+=========================================== */
+
+/* CSS Custom Properties */
+:root {
+    /* Primary Colors from Logo */
+    --gold-primary: #D4AF37;
+    --gold-light: #F4E4A6;
+    --gold-dark: #B8860B;
+    --black: #121212;
+    --dark-grey: #2C2C2C;
+    --medium-grey: #555555;
+    --light-grey: #F8F8F8;
+    --white: #FFFFFF;
+    
+    /* Gradients */
+    --gradient-gold-dark: linear-gradient(135deg, var(--gold-primary) 0%, var(--dark-grey) 100%);
+    --gradient-gold-subtle: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
+    --gradient-gold-light: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
+    --gradient-gold-reverse: linear-gradient(135deg, var(--dark-grey) 0%, var(--gold-primary) 100%);
+    --gradient-card: linear-gradient(135deg, var(--white) 0%, var(--light-grey) 100%);
+    --gradient-overlay: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(44, 44, 44, 0.05) 100%);
+    
+    /* Shadows */
+    --shadow-subtle: 0 4px 12px rgba(18, 18, 18, 0.08);
+    --shadow-medium: 0 8px 24px rgba(18, 18, 18, 0.12);
+    --shadow-elevated: 0 12px 32px rgba(18, 18, 18, 0.16);
+    --shadow-strong: 0 16px 40px rgba(18, 18, 18, 0.2);
+    --shadow-gold: 0 8px 24px rgba(212, 175, 55, 0.2);
+    
+    /* Border Radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+    --border-radius-2xl: 24px;
+    --border-radius-3xl: 32px;
+    
+    /* Transitions */
+    --transition-standard: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Section Base Styling */
+.why-choose-us {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, var(--white) 0%, var(--light-grey) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.why-choose-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-gold-dark);
+    z-index: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 20px;
+}
+
+.section-badge {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--gradient-gold-dark);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    box-shadow: var(--shadow-subtle);
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    position: relative;
+}
+
+.title-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0 25px;
+}
+
+.decoration-line {
+    width: 60px;
+    height: 2px;
+    background: var(--gradient-gold-subtle);
+    border-radius: 1px;
+}
+
+.decoration-icon {
+    color: var(--gold-primary);
+    font-size: 1.25rem;
+    background: var(--white);
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: var(--shadow-gold);
+}
+
+.section-intro {
+    font-size: 1.125rem;
+    color: var(--medium-grey);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Trust Indicators */
+.trust-indicators {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 60px;
+    padding: 0 20px;
+}
+
+.trust-stat {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.trust-stat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-gold-dark);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: var(--gradient-gold-dark);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--dark-grey);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Strengths Grid */
+.strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 70px;
+    padding: 0 20px;
+}
+
+.strength-card {
+    background: var(--white);
+    padding: 35px 30px;
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.strength-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-overlay);
+    opacity: 0;
+    transition: var(--transition-standard);
+}
+
+.strength-icon {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 25px;
+    z-index: 2;
+}
+
+.icon-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-gold-subtle);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 2rem;
+    z-index: 2;
+    box-shadow: var(--shadow-gold);
+}
+
+.icon-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: var(--gradient-gold-light);
+    border-radius: 50%;
+    opacity: 0.2;
+    z-index: 1;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.3;
+    }
+}
+
+.strength-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 15px;
+    line-height: 1.3;
+    z-index: 2;
+    position: relative;
+}
+
+.strength-description {
+    color: var(--medium-grey);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: relative;
+    flex: 1;
+}
+
+.strength-features {
+    margin-bottom: 25px;
+    z-index: 2;
+    position: relative;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.feature-item i {
+    color: var(--gold-primary);
+    font-size: 1rem;
+}
+
+.feature-item span {
+    font-size: 0.9375rem;
+    color: var(--dark-grey);
+    font-weight: 500;
+}
+
+/* Tags and Badges */
+.material-brands,
+.design-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+    z-index: 2;
+    position: relative;
+}
+
+.brand-tag,
+.design-tag {
+    padding: 6px 14px;
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--gold-dark);
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: var(--transition-standard);
+}
+
+.certification-badges,
+.pricing-highlights,
+.warranty-info,
+.service-guarantee {
+    margin-top: 15px;
+    z-index: 2;
+    position: relative;
+}
+
+.badge,
+.price-tag,
+.warranty-badge,
+.guarantee-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: var(--border-radius-md);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.badge i,
+.price-tag i,
+.warranty-badge i,
+.guarantee-badge i {
+    color: var(--gold-primary);
+    font-size: 0.875rem;
+}
+
+.badge span,
+.price-tag span,
+.warranty-badge span,
+.guarantee-badge span {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+}
+
+/* Testimonial Highlight */
+.testimonial-highlight {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    background: var(--white);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-medium);
+    overflow: hidden;
+    margin-bottom: 70px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.testimonial-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quote-icon {
+    color: var(--gold-primary);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.testimonial-text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--dark-grey);
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author-info h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 4px;
+}
+
+.author-info span {
+    font-size: 0.875rem;
+    color: var(--medium-grey);
+}
+
+.rating {
+    color: var(--gold-primary);
+    font-size: 1.25rem;
+    display: flex;
+    gap: 2px;
+}
+
+.testimonial-image {
+    background: var(--gradient-overlay);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.image-placeholder {
+    width: 150px;
+    height: 150px;
+    background: var(--gradient-gold-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 4rem;
+}
+
+/* CTA Section */
+.cta-section {
+    background: var(--gradient-gold-dark);
+    border-radius: var(--border-radius-xl);
+    padding: 50px 60px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-strong);
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.cta-content p {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    border: none;
+    border-radius: var(--border-radius-lg);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-medium);
+}
+
+.cta-btn i {
+    font-size: 1.125rem;
+}
+
+.cta-btn.primary {
+    background: var(--white);
+    color: var(--dark-grey);
+}
+
+.cta-btn.secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.decoration-dots {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.dot {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dot-1 {
+    width: 20px;
+    height: 20px;
+    top: 30px;
+    right: 60px;
+}
+
+.dot-2 {
+    width: 30px;
+    height: 30px;
+    bottom: 40px;
+    left: 50px;
+}
+
+.dot-3 {
+    width: 15px;
+    height: 15px;
+    top: 60px;
+    left: 100px;
+}
+
+.dot-4 {
+    width: 25px;
+    height: 25px;
+    bottom: 70px;
+    right: 100px;
+}
+
+/* ===========================================
+   HOVER EFFECTS & INTERACTIONS
+=========================================== */
+
+.strength-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-elevated);
+}
+
+.strength-card:hover::before {
+    opacity: 1;
+}
+
+.strength-card:hover .icon-wrapper {
+    transform: scale(1.1);
+    transition: var(--transition-bounce);
+}
+
+.strength-card:hover .brand-tag,
+.strength-card:hover .design-tag {
+    background: rgba(212, 175, 55, 0.15);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.trust-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.trust-stat:hover::before {
+    transform: scaleX(1);
+}
+
+.cta-btn.primary:hover {
+    background: var(--light-grey);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(255, 255, 255, 0.2);
+}
+
+.cta-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+=========================================== */
+
+/* Tablet (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .strengths-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .trust-indicators {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonial-highlight {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .cta-section {
+        padding: 40px 30px;
+    }
+}
+
+/* Mobile (up to 767px) */
+@media screen and (max-width: 767px) {
+    .why-choose-us {
+        padding: 60px 15px;
+    }
+    
+    .strengths-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .trust-indicators {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .testimonial-highlight {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-content {
+        padding: 30px;
+    }
+    
+    .testimonial-image {
+        padding: 30px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-intro {
+        font-size: 1rem;
+    }
+    
+    .strength-title {
+        font-size: 1.35rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .title-decoration {
+        gap: 15px;
+    }
+    
+    .decoration-line {
+        width: 40px;
+    }
+}
+
+/* Small Mobile (up to 480px) */
+@media screen and (max-width: 480px) {
+    .trust-indicators {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .strength-card {
+        padding: 25px 20px;
+    }
+    
+    .stat-number {
+        font-size: 1.75rem;
+    }
+    
+    .cta-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .testimonial-text {
+        font-size: 1.125rem;
+    }
+}
+
+/* Large Desktop (1200px and above) */
+@media screen and (min-width: 1200px) {
+    .strengths-grid {
+        gap: 40px;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+    
+    .trust-indicators {
+        gap: 30px;
+    }
+}
+
+/* Mobile (up to 767px) */
+@media screen and (max-width: 767px) {
+    .why-choose-us {
+        padding: 60px 15px;
+    }
+    
+    .strengths-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .trust-indicators {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .testimonial-highlight {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-content {
+        padding: 30px;
+    }
+    
+    .testimonial-image {
+        padding: 30px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-intro {
+        font-size: 1rem;
+    }
+    
+    .strength-title {
+        font-size: 1.35rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .title-decoration {
+        gap: 15px;
+    }
+    
+    .decoration-line {
+        width: 40px;
+    }
+    
+    /* MOBILE-OPTIMIZED STRENGTH CARD DESIGN */
+    .strength-card {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .strength-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+    
+    .icon-wrapper {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .icon-background {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .strength-title {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
+    
+    .strength-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+    
+    .strength-features {
+        margin-bottom: 15px;
+    }
+    
+    .feature-item {
+        margin-bottom: 8px;
+        gap: 8px;
+    }
+    
+    .feature-item i {
+        font-size: 0.875rem;
+        min-width: 16px;
+    }
+    
+    .feature-item span {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+    
+    .material-brands,
+    .design-options {
+        gap: 6px;
+        margin-top: 10px;
+    }
+    
+    .brand-tag,
+    .design-tag {
+        padding: 4px 10px;
+        font-size: 0.7rem;
+    }
+    
+    .certification-badges,
+    .pricing-highlights,
+    .warranty-info,
+    .service-guarantee {
+        margin-top: 10px;
+    }
+    
+    .badge,
+    .price-tag,
+    .warranty-badge,
+    .guarantee-badge {
+        padding: 6px 12px;
+        gap: 6px;
+    }
+    
+    .badge i,
+    .price-tag i,
+    .warranty-badge i,
+    .guarantee-badge i {
+        font-size: 0.75rem;
+    }
+    
+    .badge span,
+    .price-tag span,
+    .warranty-badge span,
+    .guarantee-badge span {
+        font-size: 0.75rem;
+    }
+    
+    /* Specific optimization for the Long-Term Durability card */
+    .strength-card:has(.strength-title:contains("Long-Term Durability Guarantee")) .strength-title {
+        font-size: 1.15rem;
+    }
+    
+    .strength-card:has(.strength-title:contains("Long-Term Durability Guarantee")) .strength-description {
+        font-size: 0.875rem;
+    }
+    
+    /* Hide some features on mobile to reduce height */
+    .strength-card:has(.strength-title:contains("Long-Term Durability Guarantee")) .strength-features {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .strength-card:has(.strength-title:contains("Long-Term Durability Guarantee")) .feature-item:nth-child(n+4) {
+        display: none;
+    }
+    
+    /* Make warranty badge more compact */
+    .strength-card:has(.strength-title:contains("Long-Term Durability Guarantee")) .warranty-badge {
+        padding: 5px 10px;
+        font-size: 0.7rem;
+    }
+    
+    .strength-card:has(.strength-title:contains("Long-Term Durability Guarantee")) .warranty-badge span {
+        font-size: 0.7rem;
+    }
+}
+
+/* Small Mobile (up to 480px) - Extra Optimization */
+@media screen and (max-width: 480px) {
+    .trust-indicators {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .strength-card {
+        padding: 18px 16px;
+    }
+    
+    .stat-number {
+        font-size: 1.75rem;
+    }
+    
+    .cta-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .testimonial-text {
+        font-size: 1.125rem;
+    }
+    
+    /* Extra compact design for small screens */
+    .strength-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 12px;
+    }
+    
+    .icon-wrapper {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    .icon-background {
+        width: 65px;
+        height: 65px;
+    }
+    
+    .strength-title {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .strength-description {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
+    
+    .feature-item {
+        margin-bottom: 6px;
+    }
+    
+    .feature-item span {
+        font-size: 0.8rem;
+    }
+    
+    /* Make cards even more compact on very small screens */
+    .strength-card {
+        min-height: auto;
+    }
+    
+    /* Specific optimization for Long-Term Durability card */
+    .strength-card:has(.strength-title:contains("Long-Term Durability Guarantee")) {
+        padding: 16px 14px;
+    }
+    
+    .strength-card:has(.strength-title:contains("Long-Term Durability Guarantee")) .strength-title {
+        font-size: 1.05rem;
+        line-height: 1.3;
+    }
+    
+    .strength-card:has(.strength-title:contains("Long-Term Durability Guarantee")) .strength-description {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .strength-card:has(.strength-title:contains("Long-Term Durability Guarantee")) .feature-item span {
+        font-size: 0.75rem;
+    }
+    
+    /* Make warranty badge single line */
+    .strength-card:has(.strength-title:contains("Long-Term Durability Guarantee")) .warranty-badge {
+        flex-direction: row;
+        justify-content: center;
+        padding: 4px 8px;
+    }
+    
+    .strength-card:has(.strength-title:contains("Long-Term Durability Guarantee")) .warranty-badge span {
+        font-size: 0.65rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 120px;
+    }
+}
+
+/* CSS Selector for specific card - alternative approach */
+.strength-card:nth-child(4) {
+    /* This targets the 4th card (Long-Term Durability) */
+}
+
+/* Or use data attribute approach - add this to your HTML card */
+/* <div class="strength-card" data-card-type="durability"> */
+.strength-card[data-card-type="durability"] .strength-title {
+    font-size: 1.15rem !important;
+}
+
+.strength-card[data-card-type="durability"] .strength-description {
+    font-size: 0.875rem !important;
+}
+
+@media screen and (max-width: 767px) {
+    .strength-card[data-card-type="durability"] {
+        padding: 18px !important;
+    }
+    
+    .strength-card[data-card-type="durability"] .strength-title {
+        font-size: 1.1rem !important;
+    }
+    
+    .strength-card[data-card-type="durability"] .strength-description {
+        font-size: 0.85rem !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .strength-card[data-card-type="durability"] .strength-features {
+        margin-bottom: 12px !important;
+    }
+    
+    .strength-card[data-card-type="durability"] .warranty-badge {
+        padding: 5px 10px !important;
+        font-size: 0.7rem !important;
+    }
+}
+
+/* Extra small mobile optimization */
+@media screen and (max-width: 360px) {
+    .strength-card {
+        padding: 14px 12px !important;
+    }
+    
+    .strength-title {
+        font-size: 1rem !important;
+    }
+    
+    .strength-description {
+        font-size: 0.8rem !important;
+    }
+    
+    .feature-item span {
+        font-size: 0.75rem !important;
+    }
+    
+    .strength-card[data-card-type="durability"] {
+        padding: 14px 12px !important;
+    }
+    
+    .strength-card[data-card-type="durability"] .strength-title {
+        font-size: 1rem !important;
+    }
+    
+    .strength-card[data-card-type="durability"] .strength-description {
+        font-size: 0.8rem !important;
+    }
+}
