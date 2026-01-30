@@ -1,0 +1,622 @@
+/* ====== LOADING ANIMATION - PREMIUM WHITE THEME ====== */
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loading-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    height: 400px;
+}
+
+/* Background Circles */
+.bg-circles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(184, 149, 28, 0.02) 100%);
+    animation: circlePulse 4s ease-in-out infinite;
+}
+
+.circle-1 {
+    width: 200px;
+    height: 200px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.circle-2 {
+    width: 150px;
+    height: 150px;
+    bottom: 30%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.circle-3 {
+    width: 180px;
+    height: 180px;
+    top: 50%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+/* Mosquito Design - Premium & Professional */
+.mosquito {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    transform-origin: center;
+    z-index: 10;
+}
+
+.mosquito-1 {
+    top: 40%;
+    left: 30%;
+    animation: mosquitoPath1 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.mosquito-2 {
+    top: 60%;
+    left: 60%;
+    animation: mosquitoPath2 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.mosquito-body {
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background: linear-gradient(90deg, #2D2D2D 0%, #555555 100%);
+    border-radius: 2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mosquito-wing {
+    position: absolute;
+    width: 12px;
+    height: 8px;
+    background: rgba(212, 175, 55, 0.6);
+    border-radius: 50% 50% 0 0;
+    transform-origin: bottom center;
+    animation: wingFlap 0.15s ease-in-out infinite alternate;
+}
+
+.wing-left {
+    top: -5px;
+    left: 8px;
+    transform: rotate(-30deg);
+    animation-delay: 0.1s;
+}
+
+.wing-right {
+    top: -5px;
+    left: 18px;
+    transform: rotate(30deg);
+}
+
+.mosquito-legs {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 20px;
+}
+
+.leg {
+    position: absolute;
+    background: linear-gradient(90deg, #2D2D2D 0%, #555555 100%);
+    border-radius: 1px;
+    transform-origin: top center;
+    opacity: 0;
+    animation: legExtend 0.8s ease-out forwards;
+}
+
+.mosquito-1 .leg {
+    animation-delay: 0.3s;
+}
+
+.mosquito-2 .leg {
+    animation-delay: 0.5s;
+}
+
+.leg-1 { width: 12px; height: 2px; top: 2px; left: 5px; transform: rotate(-60deg); }
+.leg-2 { width: 12px; height: 2px; top: 2px; left: 15px; transform: rotate(60deg); }
+.leg-3 { width: 10px; height: 2px; top: 4px; left: 3px; transform: rotate(-45deg); }
+.leg-4 { width: 10px; height: 2px; top: 4px; left: 17px; transform: rotate(45deg); }
+.leg-5 { width: 8px; height: 2px; top: 6px; left: 7px; transform: rotate(-30deg); }
+.leg-6 { width: 8px; height: 2px; top: 6px; left: 15px; transform: rotate(30deg); }
+
+/* Net Design */
+.net-container {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: netReveal 1.5s cubic-bezier(0.4, 0, 0.2, 1) 2s forwards;
+}
+
+.net-line {
+    position: absolute;
+    background: rgba(212, 175, 55, 0.2);
+    transform-origin: center;
+}
+
+.net-line-horizontal {
+    width: 100%;
+    height: 1px;
+    left: 0;
+    animation: lineDrawHorizontal 0.8s ease-out 2.5s forwards;
+}
+
+.net-line-vertical {
+    width: 1px;
+    height: 100%;
+    top: 0;
+    animation: lineDrawVertical 0.8s ease-out 2.8s forwards;
+}
+
+/* Horizontal Line Positions */
+.line-1 { top: 0%; transform: scaleX(0); }
+.line-2 { top: 20%; transform: scaleX(0); }
+.line-3 { top: 40%; transform: scaleX(0); }
+.line-4 { top: 60%; transform: scaleX(0); }
+.line-5 { top: 80%; transform: scaleX(0); }
+.line-6 { top: 100%; transform: scaleX(0); }
+
+/* Vertical Line Positions */
+.line-7 { left: 0%; transform: scaleY(0); }
+.line-8 { left: 20%; transform: scaleY(0); }
+.line-9 { left: 40%; transform: scaleY(0); }
+.line-10 { left: 60%; transform: scaleY(0); }
+.line-11 { left: 80%; transform: scaleY(0); }
+.line-12 { left: 100%; transform: scaleY(0); }
+
+/* Net Frame */
+.net-frame {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    pointer-events: none;
+}
+
+.net-frame > div {
+    position: absolute;
+    background: rgba(212, 175, 55, 0.1);
+    opacity: 0;
+}
+
+.frame-top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    animation: frameExpandTop 1s ease-out 1.8s forwards;
+}
+
+.frame-right {
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    animation: frameExpandRight 1s ease-out 1.9s forwards;
+}
+
+.frame-bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    animation: frameExpandBottom 1s ease-out 2s forwards;
+}
+
+.frame-left {
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    animation: frameExpandLeft 1s ease-out 1.7s forwards;
+}
+
+/* Brand Reveal */
+.brand-reveal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    animation: brandAppear 1.2s cubic-bezier(0.4, 0, 0.2, 1) 3.5s forwards;
+    z-index: 20;
+}
+
+.brand-name {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.brand-text {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #D4AF37 0%, #B8951C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.3rem;
+    text-shadow: 0 2px 10px rgba(212, 175, 55, 0.1);
+}
+
+.brand-subtext {
+    font-size: 1.6rem;
+    color: #2D2D2D;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.brand-tagline {
+    font-size: 0.95rem;
+    color: #555555;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Loading Indicator */
+.loading-indicator {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    opacity: 0;
+    animation: indicatorAppear 0.5s ease-out 1s forwards;
+}
+
+.progress-track {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 1px;
+}
+
+.progress-fill {
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #D4AF37 0%, #B8951C 100%);
+    border-radius: 1px;
+    animation: progressLoad 3.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ====== KEYFRAME ANIMATIONS ====== */
+@keyframes circlePulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+}
+
+@keyframes mosquitoPath1 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    20% {
+        transform: translate(80px, -40px) rotate(10deg);
+    }
+    40% {
+        transform: translate(120px, 60px) rotate(-5deg);
+    }
+    60% {
+        transform: translate(40px, 100px) rotate(15deg);
+    }
+    80% {
+        transform: translate(-60px, 40px) rotate(-10deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes mosquitoPath2 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(-100px, 30px) rotate(-15deg);
+    }
+    50% {
+        transform: translate(-60px, -80px) rotate(10deg);
+    }
+    75% {
+        transform: translate(80px, -40px) rotate(-8deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes wingFlap {
+    from {
+        transform: rotate(-30deg) scaleY(0.9);
+    }
+    to {
+        transform: rotate(30deg) scaleY(1.1);
+    }
+}
+
+@keyframes legExtend {
+    from {
+        opacity: 0;
+        transform: rotate(var(--rotation)) scale(0.5);
+    }
+    to {
+        opacity: 0.8;
+        transform: rotate(var(--rotation)) scale(1);
+    }
+}
+
+@keyframes netReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    70% {
+        opacity: 0.7;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes lineDrawHorizontal {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes lineDrawVertical {
+    to {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes frameExpandTop {
+    0% {
+        width: 0%;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes frameExpandRight {
+    0% {
+        height: 0%;
+        opacity: 0;
+    }
+    100% {
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes frameExpandBottom {
+    0% {
+        width: 0%;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes frameExpandLeft {
+    0% {
+        height: 0%;
+        opacity: 0;
+    }
+    100% {
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes brandAppear {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    60% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.03);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes indicatorAppear {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes progressLoad {
+    0% {
+        width: 0%;
+    }
+    30% {
+        width: 30%;
+    }
+    60% {
+        width: 70%;
+    }
+    90% {
+        width: 95%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* ====== EXIT ANIMATION ====== */
+.loading-container.exiting {
+    animation: exitAnimation 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes exitAnimation {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px);
+        visibility: hidden;
+    }
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 1200px) {
+    .loading-wrapper {
+        height: 350px;
+    }
+    
+    .brand-text {
+        font-size: 3rem;
+    }
+    
+    .brand-subtext {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .loading-wrapper {
+        height: 250px;
+    }
+    
+    .mosquito {
+        width: 30px;
+        height: 25px;
+    }
+    
+    .mosquito-body {
+        width: 25px;
+        height: 3px;
+    }
+    
+    .mosquito-wing {
+        width: 10px;
+        height: 6px;
+    }
+    
+    .brand-text {
+        font-size: 2.2rem;
+    }
+    
+    .brand-subtext {
+        font-size: 1rem;
+    }
+    
+    .brand-tagline {
+        font-size: 0.8rem;
+    }
+    
+    .loading-indicator {
+        width: 150px;
+        bottom: 10%;
+    }
+}
+
+@media (max-width: 480px) {
+    .loading-wrapper {
+        height: 200px;
+    }
+    
+    .mosquito {
+        width: 25px;
+        height: 20px;
+    }
+    
+    .brand-text {
+        font-size: 1.8rem;
+    }
+    
+    .brand-subtext {
+        font-size: 0.9rem;
+    }
+    
+    .loading-indicator {
+        width: 120px;
+    }
+}
+
+/* Accessibility: Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    .mosquito,
+    .mosquito-wing,
+    .net-line,
+    .brand-reveal,
+    .progress-fill,
+    .circle {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+    
+    .loading-container.exiting {
+        animation: fadeOut 0.5s ease-out forwards;
+    }
+    
+    @keyframes fadeOut {
+        to {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
